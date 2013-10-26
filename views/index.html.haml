@@ -48,7 +48,10 @@
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/papel.png", :alt => 'Paper', :id=>'img1'}
           .span3
             #versus
-              VS
+            -if (player_throw != nil)
+              %h2 VS
+            -else
+              %img{:src=> "http://banot.etsii.ull.es/alu4079/STYW/rps/ring.gif"}
           .span2
             #imagen
               - if(computer_throw == 'rock')
@@ -87,9 +90,10 @@
               -else
                 %h2 Empieza a jugar!!
           %br
-          %a{:href => '/'} 
-            .btn.btn-large.btn-primary
-              Juega otra vez  
+          -if (player_throw != nil)
+            %a{:href => '/'} 
+              .btn.btn-large.btn-primary
+                Juega otra vez  
 
       .row.span2
         %center
