@@ -49,9 +49,9 @@
           .span3
             #versus
             -if (player_throw != nil)
-              %h2 VS
-            -else
-              %img{:src=> "http://banot.etsii.ull.es/alu4079/STYW/rps/ring.png", :id=>'ring'}
+              %center
+                %h2 VS
+            
           .span2
             #imagen
               - if(computer_throw == 'rock')
@@ -61,39 +61,46 @@
               - elsif (computer_throw == 'paper')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/papel.png", :alt => 'Paper', :id=>'img1'}
       
-        %center
-          %br
-          %br
-          %br
-          %br
-          %br
-          %br
-          -if (player_throw != '')
-            -if (anwser == 'tied')
+      
+        %br
+        %br
+        %br
+        -if (player_throw != '')
+          -if (anwser == 'tied')
+            %center
               %h2 Empate!
-            -elsif (anwser == 'win')
+          -elsif (anwser == 'win')
+            %center
               %h2 Ganaste!
+              %br
               - if(player_throw == 'rock')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/piedra_wins.jpg", :alt => 'Rock Wins', :id=>'sol'}
               - elsif (player_throw == 'scissors')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/tijeras_wins.jpg", :alt => 'Scissors Wins', :id=>'sol'}
               - elsif (player_throw == 'paper')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/papel_wins.jpg", :alt => 'Paper Wins', :id=>'sol'}
-            -elsif (anwser == 'loose')
+          -elsif (anwser == 'loose')
+            %center
               %h2 Perdiste!!!
+              %br
               - if(computer_throw == 'rock')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/piedra_wins.jpg", :alt => 'Rock Wins', :id=>'sol'}
               - elsif (computer_throw == 'scissors')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/tijeras_wins.jpg", :alt => 'Scissors Wins', :id=>'sol'}
               - elsif (computer_throw == 'paper')
                 %img{:src => "http://banot.etsii.ull.es/alu4079/STYW/rps/papel_wins.jpg", :alt => 'Paper Wins', :id=>'sol'}
-              -else
-                %h2 Empieza a jugar!!
+          -else
+            %center
+              %h2 Empieza a jugar!!
+              %img{:src=> "public/img/FairyTail.gif" }
           %br
           -if (player_throw != nil)
-            %a{:href => '/'} 
-              .btn.btn-large.btn-primary
-                Juega otra vez  
+            %center
+              %a{:href => '/'} 
+                .btn.btn-large.btn-primary
+                  Juega otra vez  
+          
+                
 
       .row.span2
         %center
