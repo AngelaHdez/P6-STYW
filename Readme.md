@@ -34,6 +34,7 @@ Práctica 3:
 4. Ejecución
 ------------
   4.1 <b>En Heroku sin necesidad de instalar nada:</b> http://stormy-river-1001.herokuapp.com/ 
+
   4.2 rake e ir a www.example.com:9292 como en la práctica anterior
 
 5.Desarrollador
