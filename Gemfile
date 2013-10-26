@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 gem "rack", "~> 1.5.2" 
 gem "thin", "~> 1.5.1" #servidor
 gem "haml"
-gem "bundler"
+gem "bundle"
+gem "heroku"
+
 
 group :development do
-	gem "pry-debugger", "~> 0.2.2" #Degubber
+#	gem "pry-debugger", "~> 0.2.2" #Degubber
 	gem "rspec"
 end
 
@@ -15,3 +17,5 @@ group :test do
 	gem "test-unit"
 	gem "rspec"
 end
+
+
