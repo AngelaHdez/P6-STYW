@@ -17,25 +17,25 @@ Práctica 3:
 ------------------------------------------
 	2.1 gem install heroku
 	2.2 heroku login
-	2.3 Crea un *Procfile y dentro añade web: bundle exec rackup config.ru -p $PORT
+	2.3 Crear un Procfile y dentro añadir "web: bundle exec rackup config.ru -p $PORT"
 	2.4 foreman start
-	2.5 	git init
-			git add .
-			git commit -m "init"
+	2.5 git init
+            git add .
+            git commit -m "init"
 	2.6 heroku create
-	2.7	git push heroku master
+	2.7 git push heroku master
 	2.8 heroku open
 
 3. Arrancar Test
+----------------
 	3.1 rake test
 	3.2 rake rspec
 	3.3 rake rspech (genera Html)
 
 4. Ejecución
 ------------
-  4.1 <b>En Heroku sin necesidad de instalar nada:</b> http://stormy-river-1001.herokuapp.com/ 
-
-  4.2 rake e ir a www.example.com:9292 como en la práctica anterior
+  	4.1 En Heroku sin necesidad de instalar nada: http://stormy-river-1001.herokuapp.com/ 
+	4.2 En terminal:  hacer rake e ir a www.example.com:9292 como en la práctica anterior.
 
 5.Desarrollador
 ---------------
