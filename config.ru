@@ -6,7 +6,7 @@ use Rack::Lint
 use Rack::Session::Cookie,{ 
     :key => 'gana', 
     :secret =>'cookie',
-    :expire_after => 30}
+    :expire_after => 120}
 
 run RockPaperScissors::App.new
 
