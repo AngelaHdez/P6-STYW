@@ -13,12 +13,20 @@ describe RockPaperScissors::App do
 		it "debe devolver el codigo 200 success" do
 			res = app.get("/")
 			res.status.should == 200
-			
+		
 			
 		end
 
 		it "debe mostrar RPS" do
 			app.post('/').should match('RPS')
+		end
+
+		it "debe mostrar gif" do
+			app.post('/').body.should match("<img src='public/img/FairyTail.gif'>")
+		end
+
+		it "debe mostrar 'Empieza a jugar '" do
+			app.post('/').body.should match("<h2>Empieza a jugar!!</h2>")
 		end
 	end	
 
@@ -42,6 +50,14 @@ describe RockPaperScissors::App do
 			app.post("/?choice=scissors").body.should match("<a href='/'>")
 			app.post("/?choice=scissors").body.should match("Juega otra vez")
 		end
+
+		it "No debe mostrar gif" do
+			app.post('/?choice=scissors').body.should_not match("<img src='public/img/FairyTail.gif'>")
+		end
+
+		it "debe mostrar Versus" do
+			app.post('/?choice=scissors').body.should match("<h2>VS</h2>")
+		end
 	end
 
 	
@@ -55,6 +71,19 @@ describe RockPaperScissors::App do
 			app.get("/?choice=rock").body.should match("http://banot.etsii.ull.es/alu4079/STYW/rps/piedra.png")
 		end
 
+		it "debe mostrar Versus" do
+			app.post('/?choice=scissors').body.should match("<h2>VS</h2>")
+		end
+
+		it "debe tener boton jugar " do
+			app.post("/?choice=scissors").body.should match("<a href='/'>")
+			app.post("/?choice=scissors").body.should match("Juega otra vez")
+		end
+
+		it "No debe mostrar gif" do
+			app.post('/?choice=scissors').body.should_not match("<img src='public/img/FairyTail.gif'>")
+		end
+
 	end
 
 	context "/?choice=paper" do 
@@ -64,6 +93,19 @@ describe RockPaperScissors::App do
 
 		it "debe mostrar papel" do 
 			app.get("/?choice=paper").body.should match("http://banot.etsii.ull.es/alu4079/STYW/rps/papel.png")
+		end
+
+		it "debe mostrar Versus" do
+			app.post('/?choice=scissors').body.should match("<h2>VS</h2>")
+		end
+
+		it "debe tener boton jugar " do
+			app.post("/?choice=scissors").body.should match("<a href='/'>")
+			app.post("/?choice=scissors").body.should match("Juega otra vez")
+		end
+
+		it "No debe mostrar gif" do
+			app.post('/?choice=scissors').body.should_not match("<img src='public/img/FairyTail.gif'>")
 		end
 
 	end
