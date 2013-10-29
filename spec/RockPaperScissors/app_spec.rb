@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'pp'
 
+
 describe RockPaperScissors::App do
 	#let(:app) {Rack::MockRequest.new(RockPaperScissors::App.new)}
 	def app
@@ -14,7 +15,6 @@ describe RockPaperScissors::App do
 			res = app.get("/")
 			res.status.should == 200
 		
-			
 		end
 
 		it "debe mostrar RPS" do
@@ -28,6 +28,8 @@ describe RockPaperScissors::App do
 		it "debe mostrar 'Empieza a jugar '" do
 			app.post('/').body.should match("<h2>Empieza a jugar!!</h2>")
 		end
+
+		
 	end	
 
 	context "/?choice=scissors" do 
@@ -43,9 +45,7 @@ describe RockPaperScissors::App do
 			app.get("/?choice=scissors").body.include?('<h2>Ganaste!</h2>')
 
 		end
-	end
-
-	context "/?choice=scissors" do 
+	 
 		it "debe tener boton jugar " do
 			app.post("/?choice=scissors").body.should match("<a href='/'>")
 			app.post("/?choice=scissors").body.should match("Juega otra vez")

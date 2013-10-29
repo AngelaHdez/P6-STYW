@@ -71,9 +71,9 @@ class AppTest < Test::Unit::TestCase
 	    assert  last_response.ok?
   	end
 
-    def test_cookie
-       pp current_session
-        assert current_session.rack_mock_session.app.key=="rack.session"
-    end
+    #def test_cookie
+    #   pp current_session
+    #    assert current_session.rack_mock_session.app.key=="rack.session"
+   # end
 
 end
