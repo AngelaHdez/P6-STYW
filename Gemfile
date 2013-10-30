@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-group :production do 
+group :production do
 	gem "rack", "~> 1.5.2" 
 	gem "thin", "~> 1.5.1" #servidor
 	gem "haml"
-	gem "bundle"
-#gem "heroku"
+	#gem "bundle"
+	#gem "heroku"
 end
 
 
