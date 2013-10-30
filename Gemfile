@@ -17,5 +17,3 @@ group :test do
 	gem "test-unit"
 	gem "rspec"
 end
-
-
